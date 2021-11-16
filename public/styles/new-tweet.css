@@ -12,11 +12,10 @@ form {
 }
 
 textarea {
-  width: 400px;
+  width: 50%;
   font-size: 16px;
   background-color: #FFFFFFBF;
   height: 24px;
-  resize: none;
   border: 0 none;
   outline: none;
   position: absolute;
@@ -46,6 +45,11 @@ button {
   border: none;
 }
 
-output {
+.counter {
   margin: 5px;
+}
+
+.counterLimit {
+  margin: 5px;
+  color: red;
 }
