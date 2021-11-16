@@ -1,0 +1,50 @@
+.new-tweet {
+  width: 95%;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+form {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+textarea {
+  width: 400px;
+  font-size: 16px;
+  height: 24px;
+  resize: none;
+  border: 0 none;
+  outline: none;
+  position: absolute;
+  margin-left: 1em;
+}
+
+div.black-line {
+  width: 100%;
+  margin: 5px;
+  border-top: 2px solid black;
+
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+}
+
+label {
+  padding: 10px ;
+}
+
+button {
+  font-size: 24px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 5px;
+  border: none;
+}
+
+output {
+  margin: 5px;
+}
