@@ -19,8 +19,43 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+main {
+  width: 90%;
+
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+a.black-line {
+  width: 99%;
+  margin: 5px;
+  border-bottom: 2px solid black;
+}
+
+main h3 {
+  padding: 5px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+main h5 {
+  font-family: 'Bungee', cursive;
+  padding: 5px;
+  display: flex;
+  align-self: flex-end;
+  margin-right: 1em;
+}
+
+p {
+  margin: 5px;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
