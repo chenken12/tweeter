@@ -14,6 +14,7 @@ form {
 textarea {
   width: 400px;
   font-size: 16px;
+  background-color: #FFFFFFBF;
   height: 24px;
   resize: none;
   border: 0 none;
