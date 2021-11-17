@@ -40,7 +40,7 @@
       
     </nav>
 
-    <header>
+    <header class="main-profile">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -51,7 +51,7 @@
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container" id="main-box">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
@@ -63,7 +63,47 @@
           </div>
         </form>
       </section>
+
+      <article class="tweet-content">
+        <header class="user">
+          <div class="user-profile">
+            <img class="user-avatars" src="/images/profile-hex.png">
+            <a>Rhoda Jacobs</a> 
+          </div>
+          <a class="userhandle">@MrsJacobs</a>
+        </header>
+        <p class="utweet">This is a Tweet</p>
+        <footer class="d-and-i">
+          <a>10 days</a>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+
+      <article class="tweet-content">
+        <header class="user">
+          <div class="user-profile">
+            <img class="user-avatars" src="/images/profile-hex.png">
+            <a>Newton</a> 
+          </div>
+          <a class="userhandle">@SirIsaac</a>
+        </header>
+        <p class="utweet">Some thing cool just happen</p>
+        <footer class="d-and-i">
+          <a>11 days</a>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
  
+
+
       <p>This is a Tweet</p>
       <p>High in fiber and good for your heart, Veggie Ipsum delivers the most organic, hand-picked, lorem ipsum placeholder text right to your door (or browser... I guess).</p>
       <p>Some thing cool just happen</p>
