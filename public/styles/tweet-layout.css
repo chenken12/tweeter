@@ -1,3 +1,11 @@
+#tweets-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
 article.tweet-content {
   width: 90%;
   border-style: solid;
