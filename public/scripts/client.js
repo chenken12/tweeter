@@ -52,10 +52,12 @@ $( document ).ready(function() {
     //alert( "Handler for .submit() called." );
     event.preventDefault();
     const input = $( this ).serialize();
-    const length = $( this ).find("#tweet-text").val().length;
+    const value = input.replace(/%20/g, " ").slice(5);
 
     //if char is less then 140 then send a post request and reset textbox and counter
-    if (length <= 140) {
+    if (!value.trim() || value.length > 140) {
+      alert("I am an alert box!");
+    } else {
       $.ajax({
         type: "POST",
         url: tweetdb,
