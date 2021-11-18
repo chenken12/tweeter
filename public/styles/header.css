@@ -9,3 +9,16 @@ header.main-profile {
   background-color: #1d9bf0;
   background-image: url("/images/45-degree-fabric-dark.png");
 }
+
+@media only screen and (min-width: 1024px) { 
+  header.main-profile { 
+    width: 30%;
+    float: left;
+
+
+    align-self: flex-start;
+    margin: 3rem;
+    margin-top: 5rem;
+  }
+  
+}

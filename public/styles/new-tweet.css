@@ -23,9 +23,10 @@ form {
 
 textarea {
   width: 100%;
-  font-size: 24px;
-  background-color: #FFFFFFBF;
-  height: 24px;
+  font-size: 1.5rem;
+  background-color: #FFFFFF00;
+  resize: none;
+  height: 4rem;
   border: 0 none;
   outline: none;
 
@@ -60,4 +61,10 @@ button {
 .counterLimit {
   margin: 5px;
   color: red;
+}
+
+@media only screen and (min-width: 1024px) { 
+  form {
+    margin: 0;
+  }
 }
