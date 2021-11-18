@@ -27,7 +27,7 @@ const createTweetElement = function(tweet) {
         </div>
         <a class="userhandle">${tweet.user.handle}</a>
       </header>
-      <p>${tweet.content.text}</p>
+      <p>${escape(tweet.content.text)}</p>
       <footer class="d-and-i">
         <a>${timeago.format(tweet.created_at)}</a>
         <div class="icons">
@@ -42,6 +42,12 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $( document ).ready(function() {
   const tweetdb = '/tweets';
 
@@ -50,13 +56,19 @@ $( document ).ready(function() {
   $( "#target" ).submit(function( event ) {
     //alert( "Handler for .submit() called." );
     event.preventDefault();
+    $("#input-error").slideUp();
     const input = $( this ).serialize();
     const value = $(this).find("#tweet-text").val();
-
-    console.log(value);
+    
     //if char is less then 140 then send a post request and reset textbox and counter
-    if (!value.trim() || value.length > 140) {
-      alert("Invaild Input or over 140 Char");
+    if (!value.trim()) {
+      $("#input-error")
+        .html("⚠️ Plz input a message before sending! ⚠️")
+        .slideDown();
+    } else if (value.length > 140) {
+      $("#input-error")
+        .html("⚠️ Too Long. Please type under 140 characters! ⚠️")
+        .slideDown();
     } else {
       $.ajax({
         type: "POST",
@@ -69,7 +81,7 @@ $( document ).ready(function() {
       //dalay write because sometime is reload without new tweet
       setTimeout(function(){
         loadTweets(); 
-      }, 100);
+      }, 1000);
     }
   });
 
