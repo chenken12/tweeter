@@ -5,18 +5,18 @@
  */
 
 const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  
-  //$('#tweets-container').empty();
+
   for(tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     //console.log($tweet);
     $('#tweets-container').append($tweet); 
   }
+};
 
-}
+const loadTweets = function() {
+  $('#tweets-container').empty();
+  $.get('/tweets').then(renderTweets);
+};
 
 const createTweetElement = function(tweet) {
   let $tweet = `
@@ -41,49 +41,12 @@ const createTweetElement = function(tweet) {
   `;
   // ...
   return $tweet;
-}
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+};
 
 $( document ).ready(function() {
-  // const $tweet = createTweetElement(tweetData);
+  const tweetdb = '/tweets';
 
-  // // Test / driver code (temporary)
-  // console.log($tweet); // to see what it looks like
-
-  renderTweets(data);
-  //$('#tweets-container').append($tweet); 
-  // Handler for .ready() called.
-  //console.log("test hello");
-  let tweetdb = '/tweets';
-
-  $.get(tweetdb).then(data => {
-    console.log("what happened?");
-    console.log(data);
-  });
+  loadTweets();
 
   $( "#target" ).submit(function( event ) {
     //alert( "Handler for .submit() called." );
@@ -100,8 +63,12 @@ $( document ).ready(function() {
       });
       $(this).find("#tweet-text").val("");
       $(this).find(".counter").val("140");
-    }
 
+      // setTimeout(function(){
+      //   loadTweets(); 
+      // }, 0);
+      loadTweets(); 
+    }
   });
 
 });
