@@ -34,17 +34,13 @@ main {
   flex-direction: column;
 }
 
-p {
-  margin: 5px;
-}
-
 @media only screen and (min-width: 1024px) { 
   body { 
     margin-top: 120px;
     flex-direction: row;
   }
   main {
-    width: 70%;
+    width: 75%;
     padding: 1rem;
     margin: 2rem;
     float: right;

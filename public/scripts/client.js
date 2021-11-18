@@ -38,7 +38,7 @@ const createTweetElement = function(tweet) {
       </footer>
     </article>
   `;
-  // ...
+
   return $tweet;
 };
 
@@ -59,10 +59,10 @@ $( document ).ready(function() {
   })
 
   $("#target").submit(function( event ) {
-    //alert( "Handler for .submit() called." );
     event.preventDefault();
     $("#input-error").slideUp();
-    const input = $( this ).serialize();
+
+    const input = $(this).serialize();
     const value = $(this).find("#tweet-text").val();
     
     //if char is less then 140 then send a post request and reset textbox and counter
@@ -79,15 +79,10 @@ $( document ).ready(function() {
         type: "POST",
         url: tweetdb,
         data: input
-      });
+      }).done(loadTweets);
+
       $(this).find("#tweet-text").val("");
       $(this).find(".counter").val("140");
-
-      //dalay write because sometime is reload without new tweet
-      setTimeout(function(){
-        loadTweets(); 
-      }, 1000);
     }
   });
-
 });
