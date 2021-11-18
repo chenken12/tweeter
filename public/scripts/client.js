@@ -53,7 +53,12 @@ $( document ).ready(function() {
 
   loadTweets();
 
-  $( "#target" ).submit(function( event ) {
+  $(".toggle-tweet").click(() => {
+    $(".new-tweet").slideToggle("slow", "swing");
+    $("#tweet-text").focus();
+  })
+
+  $("#target").submit(function( event ) {
     //alert( "Handler for .submit() called." );
     event.preventDefault();
     $("#input-error").slideUp();
