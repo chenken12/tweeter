@@ -3,9 +3,64 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,14 +68,12 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 1.5rem;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,26 +81,232 @@ body {
 
 main {
   width: 90%;
-
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  float: right;
 }
 
-@media only screen and (min-width: 1024px) { 
-  body { 
+nav {
+  height: 120px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  user-select: none;
+  color: #FFFFFF;
+  padding: 1em;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav h1 {
+  font-size: 36px;
+  font-family: "Bungee", cursive;
+  display: flex;
+  align-self: flex-end;
+  margin: 10px;
+}
+nav .bold {
+  font-size: 28px;
+  font-weight: 600;
+}
+nav .toggle-tweet:hover > #double-arrow {
+  animation: updown 2s ease infinite;
+}
+
+#double-arrow {
+  color: red;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+header.main-profile {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1d9bf0;
+  background-image: url("/images/45-degree-fabric-dark.png");
+}
+
+.new-tweet {
+  width: 100%;
+  margin: 10px;
+  display: none;
+}
+
+form {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+#input-error {
+  color: red;
+  border-style: solid;
+  border-width: 5px;
+  display: none;
+  padding: 10px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: #FFFFFF00;
+  resize: none;
+  height: 4rem;
+  border: 0 none;
+  outline: none;
+}
+
+div.black-line {
+  width: 100%;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+
+label {
+  padding: 10px;
+}
+
+button {
+  font-size: 24px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  border-radius: 2px;
+  margin: 5px;
+  border: none;
+}
+
+.counter {
+  margin: 5px;
+}
+
+.counterLimit {
+  margin: 5px;
+  color: red;
+}
+
+#tweets-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+article.tweet-content {
+  width: 95%;
+  border-style: solid;
+  padding: 0.5em;
+  border-width: 3px;
+  margin: 0.5em;
+  margin-bottom: 1em;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+.tweet-content:hover {
+  transition-duration: 0.5s;
+  box-shadow: 5px 10px #4056A180;
+}
+
+article p {
+  padding: 1em;
+  border-bottom: 2px solid black;
+}
+
+header.user {
+  font-weight: 300;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatars {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.userhandle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #4056A166;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer.d-and-i {
+  font-size: 16px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+i {
+  padding: 2px;
+  color: #4056A1;
+}
+
+i:hover {
+  color: goldenrod;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
     margin-top: 120px;
     flex-direction: row;
   }
+
+  header.main-profile {
+    height: 350px;
+    width: 25%;
+    float: left;
+    align-self: flex-start;
+    margin: 3rem;
+    margin-top: 5rem;
+  }
+
   main {
     width: 75%;
     padding: 1rem;
     margin: 2rem;
     float: right;
   }
+
+  nav {
+    background-color: #4056A1;
+  }
+
+  form {
+    margin: 0;
+  }
 }
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

@@ -1,0 +1,30 @@
+@media only screen and (min-width: 1024px) { 
+  body { 
+    margin-top: 120px;
+    flex-direction: row;
+  }
+  header.main-profile { 
+    height: 350px;
+    width: 25%;
+    float: left;
+
+    align-self: flex-start;
+    margin: 3rem;
+    margin-top: 5rem;
+  }
+
+  main {
+    width: 75%;
+    padding: 1rem;
+    margin: 2rem;
+    float: right;
+  }
+
+  nav {
+    background-color: #4056A1;
+  }
+
+  form {
+    margin: 0;
+  }
+}
