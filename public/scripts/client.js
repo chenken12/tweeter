@@ -85,4 +85,23 @@ $( document ).ready(function() {
     console.log(data);
   });
 
+  $( "#target" ).submit(function( event ) {
+    //alert( "Handler for .submit() called." );
+    event.preventDefault();
+    const input = $( this ).serialize();
+    const length = $( this ).find("#tweet-text").val().length;
+
+    //if char is less then 140 then send a post request and reset textbox and counter
+    if (length <= 140) {
+      $.ajax({
+        type: "POST",
+        url: tweetdb,
+        data: input
+      });
+      $(this).find("#tweet-text").val("");
+      $(this).find(".counter").val("140");
+    }
+
+  });
+
 });

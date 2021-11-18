@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // --- our code goes here ---
-  $('#tweet-text').on('keyup', function (event) {
+  $('#tweet-text').on('input', function (event) {
     const numChars = $(this).val().length;
     const count = $(this).parentsUntil(".new-tweet").find(".counter");
     
