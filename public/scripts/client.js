@@ -5,7 +5,7 @@
  */
 
 const renderTweets = function(tweets) {
-
+  $('#tweets-container').empty();
   for(tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     //console.log($tweet);
@@ -14,7 +14,6 @@ const renderTweets = function(tweets) {
 };
 
 const loadTweets = function() {
-  $('#tweets-container').empty();
   $.get('/tweets').then(renderTweets);
 };
 
@@ -52,11 +51,12 @@ $( document ).ready(function() {
     //alert( "Handler for .submit() called." );
     event.preventDefault();
     const input = $( this ).serialize();
-    const value = input.replace(/%20/g, " ").slice(5);
+    const value = $(this).find("#tweet-text").val();
 
+    console.log(value);
     //if char is less then 140 then send a post request and reset textbox and counter
     if (!value.trim() || value.length > 140) {
-      alert("I am an alert box!");
+      alert("Invaild Input or over 140 Char");
     } else {
       $.ajax({
         type: "POST",
@@ -66,10 +66,10 @@ $( document ).ready(function() {
       $(this).find("#tweet-text").val("");
       $(this).find(".counter").val("140");
 
-      // setTimeout(function(){
-      //   loadTweets(); 
-      // }, 0);
-      loadTweets(); 
+      //dalay write because sometime is reload without new tweet
+      setTimeout(function(){
+        loadTweets(); 
+      }, 100);
     }
   });
 
