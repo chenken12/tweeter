@@ -1,7 +1,7 @@
 $(document).ready(function() {
   
   // cal textarea length on input
-  $('#tweet-text').on('input', function (event) {
+  $('#tweet-text').on('input', function(event) {
     const numChars = $(this).val().length;
     const count = $(this).parentsUntil(".new-tweet").find(".counter");
     

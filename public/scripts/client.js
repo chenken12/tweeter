@@ -7,10 +7,10 @@
 // loop thought the tweet and append it
 const renderTweets = function(tweets) {
   $('#tweets-container').empty();
-  for(tweet of tweets) {
+  for (tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     //console.log($tweet);
-    $('#tweets-container').append($tweet); 
+    $('#tweets-container').append($tweet);
   }
 };
 
@@ -45,13 +45,13 @@ const createTweetElement = function(tweet) {
 };
 
 // Preventing XSS with Escaping
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-$( document ).ready(function() {
+$(document).ready(function() {
   const tweetdb = '/tweets';
 
   // load tweets on first visit / refresh
@@ -61,10 +61,10 @@ $( document ).ready(function() {
   $(".toggle-tweet").click(() => {
     $(".new-tweet").slideToggle("slow", "swing");
     $("#tweet-text").focus();
-  })
+  });
 
   // for the tweet button
-  $("#send-tweet").submit(function( event ) {
+  $("#send-tweet").submit(function(event) {
     event.preventDefault();
     $("#input-error").slideUp();
 
