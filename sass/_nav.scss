@@ -28,16 +28,12 @@ nav {
     margin: 10px;
   }
 
-  .bold {
-    font-size: 28px;
-    font-weight: 600;
-  }
-
   .toggle-tweet:hover > #double-arrow {
     animation: updown 2s ease infinite;
   }
 }
 
+// the arrow color and the animation
 #double-arrow {
   color: $highlight;
 }
@@ -46,11 +42,9 @@ nav {
   0% {
     transform: translateY(-50%);
   }
-
   50% {
     transform: translateY(50%);
   }
-
   100% {
     transform: translateY(-50%);
   }

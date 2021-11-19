@@ -4,6 +4,7 @@
 
   display: none;
 
+  // the error message
   #input-error {
     color: $highlight;
     border-style: solid;
@@ -14,6 +15,7 @@
   }
 }
 
+// the input box and label
 #send-tweet {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -36,6 +38,7 @@
   }
 }
 
+// the tweet button and 140 char
 div.black-line {
   border-top: 2px solid $main-color;
   font-family: 'Bungee', cursive;

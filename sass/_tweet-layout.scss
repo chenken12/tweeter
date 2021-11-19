@@ -11,6 +11,7 @@
   box-shadow: 5px 10px #26465380;
 }
 
+// the main box itself
 article.tweet-content {
   width: 95%;
   border-style: solid;
@@ -24,12 +25,14 @@ article.tweet-content {
   align-self: center;
   flex-direction: column;
 
+  // main tweet
   p {
     padding: 1em;
     border-bottom: 2px solid $main-color;
   }
 }
 
+// for the main user info in the tweet box
 header.user {
   font-weight: 300;
 
@@ -55,6 +58,7 @@ header.user {
   }
 }
 
+// use for day and icons
 footer {
   font-size: 16px;
   margin-left: 1rem;

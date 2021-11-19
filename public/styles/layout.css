@@ -78,6 +78,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
+body .bold {
+  font-size: 28px;
+  font-weight: 600;
+}
 
 main {
   width: 90%;
@@ -110,10 +114,6 @@ nav h1 {
   display: flex;
   align-self: flex-end;
   margin: 10px;
-}
-nav .bold {
-  font-size: 28px;
-  font-weight: 600;
 }
 nav .toggle-tweet:hover > #double-arrow {
   animation: updown 2s ease infinite;
