@@ -24,6 +24,8 @@
 
   nav {
     background-color: $main-color;
+    position: fixed;
+    top: 0;
   }
 
   #send-tweet {

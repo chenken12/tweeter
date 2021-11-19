@@ -83,6 +83,15 @@ body .bold {
   font-weight: 600;
 }
 
+#btn-top {
+  display: none;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 4rem;
+  color: #e76f51;
+}
+
 main {
   width: 90%;
   display: flex;
@@ -94,7 +103,7 @@ main {
 nav {
   height: 120px;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   user-select: none;
   color: #edf2f4;
@@ -292,6 +301,8 @@ footer i:hover {
 
   nav {
     background-color: #264653;
+    position: fixed;
+    top: 0;
   }
 
   #send-tweet {

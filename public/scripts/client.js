@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// loop thought the tweet and append it
 const renderTweets = function(tweets) {
   $('#tweets-container').empty();
   for(tweet of tweets) {
@@ -17,6 +18,7 @@ const loadTweets = function() {
   $.get('/tweets').then(renderTweets);
 };
 
+// the tweet box layout
 const createTweetElement = function(tweet) {
   let $tweet = `
     <article class="tweet-content">
@@ -42,6 +44,7 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+// Preventing XSS with Escaping
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -51,13 +54,16 @@ const escape = function (str) {
 $( document ).ready(function() {
   const tweetdb = '/tweets';
 
+  // load tweets on first visit / refresh
   loadTweets();
 
+  // toggle the write tweet textarea
   $(".toggle-tweet").click(() => {
     $(".new-tweet").slideToggle("slow", "swing");
     $("#tweet-text").focus();
   })
 
+  // for the tweet button
   $("#send-tweet").submit(function( event ) {
     event.preventDefault();
     $("#input-error").slideUp();
@@ -75,12 +81,14 @@ $( document ).ready(function() {
         .html("⚠️ Too Long. Please type under 140 characters! ⚠️")
         .slideDown();
     } else {
+      // if no errors then post
       $.ajax({
         type: "POST",
         url: tweetdb,
         data: input
       }).done(loadTweets);
 
+      // reset textbox and counter
       $(this).find("#tweet-text").val("");
       $(this).find(".counter").val("140");
     }

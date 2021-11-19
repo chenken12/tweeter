@@ -36,6 +36,15 @@ body {
   }
 }
 
+#btn-top {
+  display: none;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 4rem;
+  color: $highlight;
+}
+
 main {
   width: 90%;
 
