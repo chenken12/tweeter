@@ -185,13 +185,13 @@ header.main-profile {
   outline: none;
 }
 
-div.black-line {
+div.text-info {
   border-top: 2px solid #264653;
   font-family: "Bungee", cursive;
   display: flex;
   justify-content: space-between;
 }
-div.black-line button {
+div.text-info button {
   font-size: 24px;
   background-color: #264653;
   color: #edf2f4;
@@ -199,10 +199,10 @@ div.black-line button {
   margin: 5px;
   border: none;
 }
-div.black-line .counter {
+div.text-info .counter {
   margin: 5px;
 }
-div.black-line .counterLimit {
+div.text-info .counterLimit {
   color: #e76f51;
 }
 
