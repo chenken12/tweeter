@@ -6,6 +6,10 @@
   flex-direction: column-reverse;
 }
 
+.tweet-content:hover {
+  transition-duration: 0.5s;
+  box-shadow: 5px 10px #4056A180;
+}
 
 article.tweet-content {
   width: 95%;
@@ -18,16 +22,11 @@ article.tweet-content {
   display: flex;
   align-self: center;
   flex-direction: column;
-}
 
-.tweet-content:hover {
-  transition-duration: 0.5s;
-  box-shadow: 5px 10px #4056A180;
-}
-
-article p {
-  padding: 1em;
-  border-bottom: 2px solid black;
+  p {
+    padding: 1em;
+    border-bottom: 2px solid black;
+  }
 }
 
 header.user {
@@ -36,44 +35,49 @@ header.user {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-avatars {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 10px;
+  }
+
+  .userhandle {
+    font-weight: 600;
+    font-size: 20px;
+  
+    color: #4056A166;
+  }
 }
 
-.user-profile {
-  display: flex;
-  align-items: center;
-}
-
-.user-avatars {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-}
-
-.userhandle {
-  font-weight: 600;
-  font-size: 20px;
-
-  color: #4056A166;
-}
-
-.icons {
-  display: flex;
-  justify-content: flex-end;
-}
-
-footer.d-and-i {
+footer {
   font-size: 16px;
   margin-left: 1rem;
   margin-right: 1rem;
   display: flex;
   justify-content: space-between;
+
+  .icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  a {
+    margin: 5px;
+  }
+
+  i {
+    margin: 5px;
+    color: #4056A1;
+  }
+  
+  i:hover {
+    color: goldenrod;
+  }
 }
 
-i {
-  padding: 2px;
-  color: #4056A1;
-}
-
-i:hover {
-  color: goldenrod;
-}

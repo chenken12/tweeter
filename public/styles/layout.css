@@ -150,45 +150,39 @@ header.main-profile {
   margin: 10px;
   display: none;
 }
+.new-tweet #input-error {
+  color: red;
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  display: none;
+}
 
-form {
+#send-tweet {
   margin-top: 1em;
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
 }
-
-#input-error {
-  color: red;
-  border-style: solid;
-  border-width: 5px;
-  display: none;
+#send-tweet label {
   padding: 10px;
 }
-
-textarea {
-  width: 100%;
+#send-tweet textarea {
+  height: 4rem;
   font-size: 1.5rem;
   background-color: #FFFFFF00;
   resize: none;
-  height: 4rem;
   border: 0 none;
   outline: none;
 }
 
 div.black-line {
-  width: 100%;
   border-top: 2px solid black;
   display: flex;
   justify-content: space-between;
   font-family: "Bungee", cursive;
 }
-
-label {
-  padding: 10px;
-}
-
-button {
+div.black-line button {
   font-size: 24px;
   background-color: #4056A1;
   color: #FFFFFF;
@@ -196,13 +190,10 @@ button {
   margin: 5px;
   border: none;
 }
-
-.counter {
+div.black-line .counter {
   margin: 5px;
 }
-
-.counterLimit {
-  margin: 5px;
+div.black-line .counterLimit {
   color: red;
 }
 
@@ -210,6 +201,11 @@ button {
   width: 100%;
   display: flex;
   flex-direction: column-reverse;
+}
+
+.tweet-content:hover {
+  transition-duration: 0.5s;
+  box-shadow: 5px 10px #4056A180;
 }
 
 article.tweet-content {
@@ -223,13 +219,7 @@ article.tweet-content {
   align-self: center;
   flex-direction: column;
 }
-
-.tweet-content:hover {
-  transition-duration: 0.5s;
-  box-shadow: 5px 10px #4056A180;
-}
-
-article p {
+article.tweet-content p {
   padding: 1em;
   border-bottom: 2px solid black;
 }
@@ -240,43 +230,40 @@ header.user {
   align-items: flex-end;
   justify-content: space-between;
 }
-
-.user-profile {
+header.user .user-profile {
   display: flex;
   align-items: center;
 }
-
-.user-avatars {
-  width: 40px;
-  height: 40px;
+header.user .user-avatars {
+  width: 3rem;
+  height: 3rem;
   margin-right: 10px;
 }
-
-.userhandle {
+header.user .userhandle {
   font-weight: 600;
   font-size: 20px;
   color: #4056A166;
 }
 
-.icons {
-  display: flex;
-  justify-content: flex-end;
-}
-
-footer.d-and-i {
+footer {
   font-size: 16px;
   margin-left: 1rem;
   margin-right: 1rem;
   display: flex;
   justify-content: space-between;
 }
-
-i {
-  padding: 2px;
+footer .icons {
+  display: flex;
+  justify-content: flex-end;
+}
+footer a {
+  margin: 5px;
+}
+footer i {
+  margin: 5px;
   color: #4056A1;
 }
-
-i:hover {
+footer i:hover {
   color: goldenrod;
 }
 
@@ -306,7 +293,7 @@ i:hover {
     background-color: #4056A1;
   }
 
-  form {
+  #send-tweet {
     margin: 0;
   }
 }

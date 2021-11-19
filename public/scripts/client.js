@@ -28,7 +28,7 @@ const createTweetElement = function(tweet) {
         <a class="userhandle">${tweet.user.handle}</a>
       </header>
       <p>${escape(tweet.content.text)}</p>
-      <footer class="d-and-i">
+      <footer>
         <a>${timeago.format(tweet.created_at)}</a>
         <div class="icons">
           <i class="fa-solid fa-flag"></i>
@@ -58,7 +58,7 @@ $( document ).ready(function() {
     $("#tweet-text").focus();
   })
 
-  $("#target").submit(function( event ) {
+  $("#send-tweet").submit(function( event ) {
     event.preventDefault();
     $("#input-error").slideUp();
 
