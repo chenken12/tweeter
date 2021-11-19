@@ -8,7 +8,7 @@
 
 .tweet-content:hover {
   transition-duration: 0.5s;
-  box-shadow: 5px 10px #4056A180;
+  box-shadow: 5px 10px #26465380;
 }
 
 article.tweet-content {
@@ -18,6 +18,7 @@ article.tweet-content {
   border-width: 3px;
   margin: .5em;
   margin-bottom: 1em;
+  background-color: #2646530D;
 
   display: flex;
   align-self: center;
@@ -25,16 +26,15 @@ article.tweet-content {
 
   p {
     padding: 1em;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid $main-color;
   }
 }
 
 header.user {
   font-weight: 300;
 
-  display: flex;
+  @include f-justify;
   align-items: flex-end;
-  justify-content: space-between;
 
   .user-profile {
     display: flex;
@@ -51,7 +51,7 @@ header.user {
     font-weight: 600;
     font-size: 20px;
   
-    color: #4056A166;
+    color: #26465366;
   }
 }
 
@@ -59,12 +59,11 @@ footer {
   font-size: 16px;
   margin-left: 1rem;
   margin-right: 1rem;
-  display: flex;
-  justify-content: space-between;
+
+  @include f-justify;
 
   .icons {
-    display: flex;
-    justify-content: flex-end;
+    @include f-justify($j: flex-end);
   }
 
   a {
@@ -73,11 +72,11 @@ footer {
 
   i {
     margin: 5px;
-    color: #4056A1;
+    color: $main-color;
   }
   
   i:hover {
-    color: goldenrod;
+    color: $highlight;
   }
 }
 

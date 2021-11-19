@@ -1,3 +1,4 @@
+// nav bar
 
 nav {
   height: 120px;
@@ -6,12 +7,11 @@ nav {
   top: 0;
   user-select: none;
 
-  color: #FFFFFF;
+  color: $text-sub;
   padding: 1em;
   font-family: 'Source Sans Pro', sans-serif;
 
-  display: flex;
-  justify-content: space-between;
+  @include f-justify;
 
   div {
     display: flex;
@@ -39,7 +39,7 @@ nav {
 }
 
 #double-arrow {
-  color: red;
+  color: $highlight;
 }
 
 @keyframes updown {

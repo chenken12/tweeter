@@ -1,0 +1,11 @@
+$bg-color: #e9c46a;
+$main-color: #264653;
+$sub-color: #2a9d8f;
+
+$text-sub: #edf2f4;
+$highlight: #e76f51;
+
+@mixin f-justify ($j: space-between){
+  display: flex;
+  justify-content: $j;
+}

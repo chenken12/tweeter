@@ -2,11 +2,10 @@ header.main-profile {
   height: 400px;
   width: 100%;
 
-  display: flex;
+  @include f-justify($j: center);
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background-color: #1d9bf0;
+  background-color: $sub-color;
   background-image: url("/images/45-degree-fabric-dark.png");
 }
 

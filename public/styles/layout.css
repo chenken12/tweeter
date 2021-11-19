@@ -69,8 +69,8 @@ html {
  * Global layout stuff
  */
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: #264653;
+  background-color: #e9c46a;
   font-size: 1.5rem;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
@@ -93,7 +93,7 @@ nav {
   position: fixed;
   top: 0;
   user-select: none;
-  color: #FFFFFF;
+  color: #edf2f4;
   padding: 1em;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
@@ -120,7 +120,7 @@ nav .toggle-tweet:hover > #double-arrow {
 }
 
 #double-arrow {
-  color: red;
+  color: #e76f51;
 }
 
 @keyframes updown {
@@ -138,10 +138,10 @@ header.main-profile {
   height: 400px;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: #1d9bf0;
+  background-color: #2a9d8f;
   background-image: url("/images/45-degree-fabric-dark.png");
 }
 
@@ -151,7 +151,7 @@ header.main-profile {
   display: none;
 }
 .new-tweet #input-error {
-  color: red;
+  color: #e76f51;
   border-style: solid;
   border-width: 5px;
   padding: 10px;
@@ -170,22 +170,22 @@ header.main-profile {
 #send-tweet textarea {
   height: 4rem;
   font-size: 1.5rem;
-  background-color: #FFFFFF00;
+  background-color: #00000000;
   resize: none;
   border: 0 none;
   outline: none;
 }
 
 div.black-line {
-  border-top: 2px solid black;
+  border-top: 2px solid #264653;
+  font-family: "Bungee", cursive;
   display: flex;
   justify-content: space-between;
-  font-family: "Bungee", cursive;
 }
 div.black-line button {
   font-size: 24px;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  background-color: #264653;
+  color: #edf2f4;
   border-radius: 2px;
   margin: 5px;
   border: none;
@@ -194,7 +194,7 @@ div.black-line .counter {
   margin: 5px;
 }
 div.black-line .counterLimit {
-  color: red;
+  color: #e76f51;
 }
 
 #tweets-container {
@@ -205,7 +205,7 @@ div.black-line .counterLimit {
 
 .tweet-content:hover {
   transition-duration: 0.5s;
-  box-shadow: 5px 10px #4056A180;
+  box-shadow: 5px 10px #26465380;
 }
 
 article.tweet-content {
@@ -215,20 +215,21 @@ article.tweet-content {
   border-width: 3px;
   margin: 0.5em;
   margin-bottom: 1em;
+  background-color: #2646530D;
   display: flex;
   align-self: center;
   flex-direction: column;
 }
 article.tweet-content p {
   padding: 1em;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #264653;
 }
 
 header.user {
   font-weight: 300;
   display: flex;
-  align-items: flex-end;
   justify-content: space-between;
+  align-items: flex-end;
 }
 header.user .user-profile {
   display: flex;
@@ -242,7 +243,7 @@ header.user .user-avatars {
 header.user .userhandle {
   font-weight: 600;
   font-size: 20px;
-  color: #4056A166;
+  color: #26465366;
 }
 
 footer {
@@ -261,10 +262,10 @@ footer a {
 }
 footer i {
   margin: 5px;
-  color: #4056A1;
+  color: #264653;
 }
 footer i:hover {
-  color: goldenrod;
+  color: #e76f51;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -290,7 +291,7 @@ footer i:hover {
   }
 
   nav {
-    background-color: #4056A1;
+    background-color: #264653;
   }
 
   #send-tweet {
